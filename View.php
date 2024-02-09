@@ -34,14 +34,18 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
 <title>SEAN MANJALY</title>
 
-<link rel="stylesheet" type="text/css" src="appCSS.css">
+<link rel="stylesheet" type="text/css" href="viewC.css">
 <script src="appJS.js"></script>
+<title>Employee Details</title>
 </head>
 <body>
+  <h2>Employee Details</h2>
+  <div class="logoutButton">
 <form method="POST">
 	<p>
 <input type="submit" name="logout" value="Logout"/></p>
 </form>
+</div>
 <?php
 foreach ( $rows as $row ) {
   echo('
@@ -61,21 +65,20 @@ foreach ( $rows as $row ) {
         <form method="POST" action="update.php">
         <input type="hidden" name="employeeId" value="'.$row['employeeId'].'"></input>
         </div>
-      <div style="padding:20px;" class="deleteEmployeeData">
+      <div style="padding:20px;" class="editEmployeeData">
       <div style="padding:20px;">
       <textarea name="employeeRemarks" value="'.$row['remarks'].'" placeholder="Remarks"></textarea >
-      <input type="submit" name="editEmployeeData" value="Update"></input>
-    </form></div>
+      <input type="submit" name="editEmployeeData" class="editEmployeeData" value="Update"></input>
+    </form></div></div>
+  <div style="padding:20px;" class="deleteEmployeeData">
     <div style="padding:20px;">
       <form method="POST" action="delete.php">
       <input type="hidden" name="employeeId" value="'.$row['employeeId'].'"></input>
-      <input type="submit" name="deleteEmployeeData" value="Delete"></input>
+      <input type="submit" name="deleteEmployeeData" class="deleteEmployeeData" value="Delete"></input>
     </form></div>
       </div>
     </div>
-    <hr>
-    <hr>
-    <hr>');
+    <div class="inBetweenDetails"></div>');
 }
 ?>
 

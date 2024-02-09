@@ -1,0 +1,63 @@
+body{
+width:100%;
+height: 100%;
+background-color: #FCFD74;
+}
+
+img {
+  border: 3px solid black;
+}
+.inBetweenDetails{
+  width:100%;
+  border: 4px solid black;
+  background-color: black;
+}
+ .userName input[type=text], select {
+   width: 25%;
+   padding: 12px 20px;
+   display: inline-block;
+   box-sizing: border-box;
+ }
+ .userEmail input[type=email], select {
+   width: 25%;
+   padding: 12px 20px;
+   display: inline-block;
+   box-sizing: border-box;
+ }
+  .userPassword input[type=password], select {
+    width: 25%;
+    padding: 12px 20px;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+  .logoutButton input[type=submit], select {
+    position: fixed;
+    width: 10%;
+    height:7%;
+      padding-left:10%;
+    padding: 12px 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: black;
+    color:white;
+  }
+.editEmployeeData input[type=submit], select{
+width: 100%;
+height:7%;
+  padding-left:10%;
+padding: 12px 20px;
+display: inline-block;
+box-sizing: border-box;
+background-color: brown;
+color:white;
+}
+.deleteEmployeeData input[type=submit], select{
+width: 100%;
+height:7%;
+  padding-left:10%;
+padding: 12px 20px;
+display: inline-block;
+box-sizing: border-box;
+background-color: red;
+color:white;
+}

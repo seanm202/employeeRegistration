@@ -77,37 +77,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="./CSS/vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="./CSS/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="./CSS/fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="./CSS/vendor/animate/animate.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="./CSS/vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="./CSS/vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="./CSS/vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="./CSS/vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="./CSS/login/main.css">
-	<link rel="stylesheet" type="text/css" href="./CSS/login/util.css">
 
-<link rel="stylesheet" type="text/css" href="appCSS.css">
-<script src="appJS.js"></script>
+
+<link rel="stylesheet" type="text/css" href="loginC.css">
 <!--===============================================================================================-->
 </head>
 <body>
+	<div class="allDetails">
+	<div class="addEmp">
 
+	<h2><a href="index.php">Add Employees</a></h2>
+	</div>
+	<div class="loginDetails">
+		<h2>Log In</h2> 	<?php
+			if(isset($_SESSION['error']))
+			{
+			echo("<h3 style='color:red;font-size:30px;'>".htmlentities($_SESSION['error'])."</h3><br>");
+			unset($_SESSION['error']);
+			}
+			if(isset($_SESSION['success']))
+			{
+			echo("<h3 style='color:green;font-size:30px;'>".htmlentities($_SESSION['success'])."</h3><br>");
+			unset($_SESSION['success']);
+			}
+			?>
+	<form method="POST" action="">
+  <div class="form-group username">
+    <label for="exampleInputEmail1">Email : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp" placeholder="Enter email">
+
+  </div>
+  <div class="form-group password">
+    <label for="exampleInputPassword1">Password : &nbsp;</label>
+    <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group log">
+  <input type="submit" name="log" class="btn btn-primary" value="Login"></input>
+</div>
+</form>
+</div>
+<div class="inBetween"></div>
+<div class="registerDetails">
+<h2>Create Account</h2>
 	<?php
 	if(isset($_SESSION['error']))
 	{
@@ -120,70 +136,23 @@
 	unset($_SESSION['success']);
 	}
 	?>
-	<br><br><br><br>
-	<form method="POST" action="">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <button type="submit" name="log" class="btn btn-primary">Login</button>
-</form>
-<br><br><br><br>
-<div>
-<h2>Create Account</h2>
-	<?php
-	if(isset($_SESSION['error']))
-	{
-	echo("<h3 style='color:red;font-size:30px;'>".htmlentities($_SESSION['error'])."</h3><br>");
-	unset($_SESSION['error']);
-	}
-	if(isset($_SESSION['success']))
-	{
-	echo("<h3 style='color:green;font-size:30px;'>".htmlentities($_SESSION['error'])."</h3><br>");
-	unset($_SESSION['error']);
-	}
-	?>
 	<form method="POST" enctype="multipart/form-data" action="addUser.php">
-  <div class="form-group">
-    <label for="name">Name : </label>
+  <div class="form-group userName">
+    <label for="name">Name :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
     <input type="text" class="form-control" id="exampleInputEmail1" name="userName" aria-describedby="emailHelp" placeholder="Enter Name">
   </div>
-  <div class="form-group">
-    <label for="userEmail">Email : </label>
+  <div class="form-group userEmail">
+    <label for="userEmail">Email :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
     <input type="email" class="form-control" name="userEmail" id="exampleInputPassword1" placeholder="Enter Email">
-  </div>  <div class="form-group">
-    <label for="userPassword">Password</label>
+  </div>  <div class="form-group userPassword">
+    <label for="userPassword">Password :&nbsp;</label>
     <input type="password" class="form-control" name="userPassword" id="exampleInputPassword1" placeholder="Enter Password">
-  </div>  <div class="form-group">
-    <label for="profilePhoto">Upload Profile Photo</label>
-    <input type="password" class=".form-control-file" name="profilePhoto" id="exampleInputPassword1">
   </div>
-  <button type="submit" name="submitUserDetails" class="btn btn-primary">Register</button>
+	<div class="form-group submitUserDetails">
+  <input type="submit" name="submitUserDetails" class="btn btn-primary" value="Register"></input></div>
 </form>
-</div>
-	<div id="dropDownSelect1"></div>
+</div></div>
 
-<!--===============================================================================================-->
-	<script src="./CSS/vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="./CSS/vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="./CSS/vendor/bootstrap/js/popper.js"></script>
-	<script src="./CSS/vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="./CSS/vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="./CSS/vendor/daterangepicker/moment.min.js"></script>
-	<script src="./CSS/vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="./CSS/vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="./JS/js/main.js"></script>
 
 </body>
 </html>

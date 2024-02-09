@@ -1,0 +1,73 @@
+.allMain{
+  border: 15px solid black;
+background-color: powderblue;
+  padding: 50px;
+  padding-bottom: 30px;
+  width: 60%;
+  margin:auto;
+    font-size:  1.5em;
+  font-family: "Times New Roman", Times, serif;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.dist{
+padding: 2px;
+}
+.center{
+  width:auto;
+  height: auto;
+  background-color: white;
+}
+.loginPosition{
+  font-size:  1.5em;
+  padding: 10px;
+}
+
+label{
+  padding:20px;
+}
+
+input[type=submit], select {
+  width: 150%;
+  height:80%;
+    padding-left:10%;
+  padding: 12px 20px;
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: brown;
+  color:white;
+}
+
+input[type=text], select {
+  width: 85%;
+  padding: 12px 20px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+input[type=email], select {
+  width: 50%;
+  padding: 12px 20px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+input[type=date], select {
+  width: 10em;
+  padding: 12px 20px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+.nameFathersName{
+  display: flex;
+}
+.mobileNumberDob{
+  display: flex;
+}
+.submitButton{
+  padding-left:0%;
+}
+.jobEmail{
+  display: flex;
+}
+.profilePhotoSubmitDetails{
+  display: flex;
+}

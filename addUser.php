@@ -53,7 +53,6 @@
 					$stmt->execute(array(':name' => $_POST['userName'],':email' => $_POST['userEmail'],':password' => $storedHash));
 					$_SESSION['success'] = "User Added!!!";
 		      header('Location: login.php');
-					return;
 				}
 		}
 	}
